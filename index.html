@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+
+    <!-- Font + Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/style/main.css" />
+
+    <style>
+        td {
+            font-size: 1.2em;
+        }
+        body {
+            background-color: #fae8d4;
+            margin: 0;
+            padding: 0;
+
+        }
+        .add-to-cart {
+            font-size: 1rem;
+        }
+            p {
+        font-size: 1rem;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav id="navbar" class="navbar fixed-top navbar-expand-lg bg-light border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img width="45px" src="/images/Almina-removebg-preview.png" alt="Almina logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#M">منيو</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Html/index-eng.html">الانجليزي</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Contact">تواصل معنا</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">الصفحه الرئيسيه</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO IMAGE -->
+    <div class="mainimg">
+        <div class="btn">
+            <a class="link" href="/Html/cart-ar.html" >اذهب الى السله</a>
+        </div>
+    </div>
+
+    <!-- MENU SECTION -->
+    <div id="M" class="menu">
+        <div class="sec">
+            <div class="box">
+                <div class="header">
+                    <h1>مشروبات ساخنه</h1>
+                </div>
+                <div class="product">
+                    <table>
+                        <tr>
+                            <td>إسبرسو</td>
+                            <td>50 EGP</td>
+                            <td><button class="add-to-cart" data-name="Espresso" data-price="50">اضف الى السله</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>كابتشينو</td>
+                            <td>60 EGP</td>
+                            <td><button class="add-to-cart" data-name="Cappuccino" data-price="50">اضف الى
+                                    السله</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>لاتيه</td>
+                            <td>70 EGP</td>
+                            <td><button class="add-to-cart" data-name="Latte" data-price="50">اضف الى السله</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="sec">
+            <div class="box">
+                <div class="header">
+                    <h1>بيرجر</h1>
+                </div>
+                <div class="product">
+                    <table>
+                        <tr>
+                            <td>كلاسيك بيرجر</td>
+                            <td>120 EGP</td>
+                            <td><button class="add-to-cart" data-name="Classic Burger" data-price="50">اضف الى
+                                    السله</button></td>
+                        </tr>
+                        <tr>
+                            <td>تشيز برجر</td>
+                            <td>130 EGP</td>
+                            <td><button class="add-to-cart" data-name="Cheese Burger" data-price="50">اضف الى
+                                    السله</button></td>
+                        </tr>
+                        <tr>
+                            <td>برجر فراخ</td>
+                            <td>110 EGP</td>
+                            <td><button class="add-to-cart" data-name="Chicken Burger" data-price="50">اضف الى
+                                    السله</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="Contact" id="Contact">
+            <div class="con">
+                <div class="FH">
+                    <h1>التواصل</h1>
+                </div>
+                <div class="footer-content">
+                    <div class="logo">
+                        <a href="#"><img class="log" src="/images/Almina-removebg-preview.png" alt=""></a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" class="icon"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="icon"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +20 101 234 5678</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 25 Coffee St, Cairo, Egypt</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@alminacafe.com">info@alminacafe.com</a></p>
+                </div>
+            </div>
+            <div class="dev">
+                <p>
+                    <-
+مبرمجه بواسطة <-عمر جاويش                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="/js/js.js">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

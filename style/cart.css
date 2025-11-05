@@ -1,0 +1,93 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: 850px;
+    margin: 180px auto 50px auto;
+    padding: 25px 15px;
+
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    overflow-x: auto;
+    /* ✅ يمنع الكارت من التمدد لو الجدول كبير */
+}
+
+/* يخلي الجدول ياخد العرض الصحيح */
+.cart table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    word-wrap: break-word;
+}
+
+.cart th,
+.cart td {
+    text-align: center;
+    padding: 10px 5px;
+    font-size: 1rem;
+    color: var(--main-color);
+}
+
+/* 📱 للموبايل */
+@media (max-width: 768px) {
+    .cart {
+        width: 95%;
+        margin: 130px auto 30px auto;
+        padding: 15px;
+    }
+
+    .cart table,
+    .cart th,
+    .cart td {
+        font-size: 0.9rem;
+    }
+
+    /* ✅ يخلي الجدول قابل للتمرير الجانبي بدل ما يكبر الكارت */
+    .cart {
+        overflow-x: auto;
+    }
+}
+
+/* 📱 للموبايلات الصغيرة جدًا */
+@media (max-width: 480px) {
+    .cart {
+        width: 95%;
+        padding: 10px;
+        margin-top: 120px;
+    }
+
+    .cart table,
+    .cart th,
+    .cart td {
+        font-size: 0.85rem;
+        padding: 8px 4px;
+    }
+}
+.btn {
+    width: 100%;
+    text-align: center;
+
+}
+
+.link {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #d97b29;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.25rem;
+}
+
+.link:hover {
+    background-color: #b05c1d;
+    box-shadow: 0 4px 10px rgba(156, 74, 26, 0.3);
+    transform: scale(1.1);
+}
