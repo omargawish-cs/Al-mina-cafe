@@ -1,19 +1,19 @@
-// تحميل السلة أو إنشاء واحدة جديدة
+// Load cart or create a new one
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-/* -------------------- 🧺 دالة لحفظ السلة -------------------- */
+/* -------------------- 🧺 Function to save cart -------------------- */
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-/* -------------------- ✅ صفحة المنيو -------------------- */
+/* -------------------- ✅ Menu Page -------------------- */
 if (document.querySelector(".add-to-cart")) {
   document.querySelectorAll(".add-to-cart").forEach(btn => {
     btn.addEventListener("click", () => {
       const name = btn.dataset.name;
       const price = parseFloat(btn.dataset.price);
 
-      // شوف لو المنتج موجود
+      // Check if the item already exists
       const existing = cart.find(item => item.name === name);
       if (existing) {
         existing.quantity++;
@@ -23,12 +23,12 @@ if (document.querySelector(".add-to-cart")) {
 
       saveCart();
       updateCartCount();
-      alert(`${name} تمت إضافته للسلة ✅`);
+      alert(`${name} has been added to your cart ✅`);
     });
   });
 }
 
-/* -------------------- 🛒 صفحة الكارت -------------------- */
+/* -------------------- 🛒 Cart Page -------------------- */
 if (document.querySelector(".cart")) {
   const cartContainer = document.querySelector(".cart");
 
@@ -36,8 +36,8 @@ if (document.querySelector(".cart")) {
     if (cart.length === 0) {
       cartContainer.innerHTML = `
         <div class="text-center p-5">
-          <h2>The cart is empty</h2>
-          <a href="index-eng.html" class="btn btn-warning mt-3">Go back to menu</a>
+          <h2>Your cart is empty</h2>
+          <a href="index-eng.html" class="btn btn-warning mt-3">Back to Menu</a>
         </div>
       `;
       updateCartCount();
@@ -47,15 +47,15 @@ if (document.querySelector(".cart")) {
     let total = 0;
     let html = `
       <div class="container p-4">
-        <h2 class="text-center mb-4" style="color:#9c4a1a;">🛒 منتجاتك</h2>
+        <h2 class="text-center mb-4" style="color:#9c4a1a;">🛒 Your Items</h2>
         <table class="table table-striped text-center">
           <thead>
             <tr>
-              <th>المنتج</th>
-              <th>السعر</th>
-              <th>الكمية</th>
-              <th>الإجمالي</th>
-              <th>حذف</th>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Remove</th>
             </tr>
           </thead>
           <tbody>
@@ -82,9 +82,9 @@ if (document.querySelector(".cart")) {
     html += `
           </tbody>
         </table>
-        <h4 class="text-end">الإجمالي: ${total} EGP</h4>
+        <h4 class="text-end">Total: ${total} EGP</h4>
         <div class="text-center mt-4">
-          <button class="btn btn-success" onclick="checkout()">تأكيد الطلب ✅</button>
+          <button class="btn btn-success" onclick="checkout()">Confirm Order ✅</button>
         </div>
       </div>
     `;
@@ -93,7 +93,7 @@ if (document.querySelector(".cart")) {
     updateCartCount();
   }
 
-  // تحديث كمية
+  // Update quantity
   window.updateQty = function (i, delta) {
     cart[i].quantity += delta;
     if (cart[i].quantity <= 0) cart.splice(i, 1);
@@ -101,30 +101,30 @@ if (document.querySelector(".cart")) {
     renderCart();
   };
 
-  // حذف منتج
+  // Remove item
   window.removeItem = function (i) {
     cart.splice(i, 1);
     saveCart();
     renderCart();
   };
 
-  // واتساب
+  // WhatsApp checkout
   window.checkout = function () {
-    if (cart.length === 0) return alert("السلة فاضية");
+    if (cart.length === 0) return alert("Your cart is empty");
     const msg = cart.map(i => `${i.name} x${i.quantity}`).join("%0A");
-    const url = `https://wa.me/201503391411?text=طلب%20جديد%20من%20الموقع:%0A${msg}`;
+    const url = `https://wa.me/201503391411?text=New%20Order%20from%20Website:%0A${msg}`;
     window.open(url, "_blank");
   };
 
   renderCart();
 }
 
-/* -------------------- 🔴 عداد الأيقونة -------------------- */
+/* -------------------- 🔴 Cart Icon Counter -------------------- */
 function updateCartCount() {
   const count = cart.reduce((sum, item) => sum + item.quantity, 0);
   const badge = document.getElementById("cart-count");
   if (badge) badge.textContent = count;
 }
 
-// تحديث العداد عند تحميل الصفحة
+// Update the counter when the page loads
 updateCartCount();
