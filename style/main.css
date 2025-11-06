@@ -44,7 +44,7 @@
 
 /* Main image */
 .mainimg {
-    background-image: url('/images/ChatGPT Image 30 أكتوبر 2025، 02_29_05 م.png');
+    background-image: url('../images/ChatGPT Image 30 أكتوبر 2025، 02_29_05 م.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -257,4 +257,5 @@ background-color: #b05c1d;
     text-align: center;
     margin-top: 20px;
 }
+
 
