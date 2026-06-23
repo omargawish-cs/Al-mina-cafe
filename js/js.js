@@ -128,3 +128,22 @@ function updateCartCount() {
 
 // تحديث العداد عند تحميل الصفحة
 updateCartCount();
+// Automatic Carousel Logic for Left Panel Reviews
+const reviewsList = document.querySelectorAll('.rev-card');
+let activeReviewIndex = 0;
+
+function slideNextReview() {
+    reviewsList[activeReviewIndex].classList.remove('active');
+    activeReviewIndex = (activeReviewIndex + 1) % reviewsList.length;
+    reviewsList[activeReviewIndex].classList.add('active');
+}
+
+// Changes review cards automatically every 4.5 seconds
+setInterval(slideNextReview, 4500);
+
+// Review Form Event Listener
+document.getElementById('cafeReviewForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('شكراً لتقييمك! تم إرسال رأيك بنجاح.');
+    this.reset();
+});
